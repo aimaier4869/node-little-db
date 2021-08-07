@@ -1,37 +1,91 @@
 # little-db
 
-#### 介绍
-小型项目的小型本地 JSON 数据库
+> Tiny local JSON database for Node and Electron
+> 小型项目的小型本地 JSON 数据库
 
-#### 软件架构
-软件架构说明
+```js
+// require the little-db
+// 引入little-db
+const db = require('little-db')
 
+// get a database object
+// 得到数据库对象
+const user = db.create('user')
+```
 
-#### 安装教程
+## Install 安装
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+```
+For the time being, you need to download the installation package manually
+暂时你需要手动下载该包
+```
 
-#### 使用说明
+## Usage 使用
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+```js
+// require the little-db
+// 引入little-db
+const db = require('little-db')
 
-#### 参与贡献
+// get a database object
+// 得到数据库对象
+const user = db.create('user')
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+// Next, you just need to operate on the user object
+// 接下来你只需要对user对象进行操作即可
 
+// set a property
+// 设置属性
+user.name = 'jack'
+user.age = 18
+user.hobbies = ['eating', 'sleaping', 'playing Peas']
+user.push('fish')
+user.gender = true
+user.address = {
+    country: 'China',
+    city: 'Beijing'
+}
+user.address.city = 'Shanghai'
+```
 
-#### 特技
+```json
+// user.json
+{
+    "name": "jack",
+    "age": 18,
+    "hobbies": [
+        "eating",
+        "sleaping",
+        "playing Peas",
+        "fish"
+    ],
+    "address": {
+        "country": "China",
+        "city": "Shanghai"
+    },
+    "gender": true
+}
+```
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+```js
+// get a property
+// 读取属性
+user.name // 'jack'
+user.age // 18
+user.hobbies // ['eating', 'sleaping', 'playing Peas']
+user.gender // true
+user.address // {country: 'China', city: 'Beijing'}
+user.address.city // 'Shanghai'
+```
+
+### Methods 方法
+
+### `db.create([dbName, obj, options])`
+* `dbName` {String} File name. If this parameter is not passed in, the current timestamp will be used as the file name. If the file does not exist, a new file will be created. If the file exists, the contents of the file will be read.  文件名，不传入该参数将把当前时间戳作为文件名。文件不存在则会创建一个新文件，若文件存在则读取该文件内容。
+
+* obj {Object} Initial data. If this parameter is passed in, the data will be written to the file. 初始数据，如果传入该参数将把数据写入到文件中。
+
+* options {Object} Configuration object. 配置对象。
+
+  * path {String} Database file storage path. 数据库文件存放路径。It should be an absolute path. 推荐传入一个绝对路径
+    **Default:** `./db/`

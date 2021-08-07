@@ -1,0 +1,26 @@
+{
+  "name": "little-db",
+  "version": "1.0.0",
+  "author": "aimaier4869",
+  "description": "Tiny local JSON database for Node and Electron.一个小型本地的JSON数据库",
+  "main": "index.js",
+  "repository": {
+		"type": "git",
+		"url": "https://gitee.com/aimaier4869/little-db.git"
+	},
+  "homepage": "https://gitee.com/aimaier4869/little-db",
+  "bugs": "https://gitee.com/aimaier4869/little-db/issues",
+  "keywords": [
+    "database",
+    "electron",
+    "JSON",
+    "local",
+    "lowdb",
+    "littledb",
+    "reactive",
+    "jsondb",
+    "localStorage"
+  ],
+  "license": "MIT",
+  "engines": {"node": ">=16.0.0"}
+}
