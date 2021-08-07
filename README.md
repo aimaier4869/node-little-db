@@ -48,7 +48,7 @@ user.address = {
 user.address.city = 'Shanghai'
 ```
 
-```json
+```js
 // user.json
 {
     "name": "jack",
