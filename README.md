@@ -15,9 +15,8 @@ const user = db.create('user')
 
 ## Install 安装
 
-```
-For the time being, you need to download the installation package manually
-暂时你需要手动下载该包
+```js
+npm i node-little-db
 ```
 
 ## Usage 使用
