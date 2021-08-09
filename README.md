@@ -6,7 +6,7 @@
 ```js
 // require the little-db
 // 引入little-db
-const db = require('little-db')
+const db = require('node-little-db')
 
 // get a database object
 // 得到数据库对象
@@ -15,7 +15,7 @@ const user = db.create('user')
 
 ## Install 安装
 
-```js
+```sh
 npm i node-little-db
 ```
 
@@ -24,7 +24,7 @@ npm i node-little-db
 ```js
 // require the little-db
 // 引入little-db
-const db = require('little-db')
+const db = require('node-little-db')
 
 // get a database object
 // 得到数据库对象
@@ -38,7 +38,7 @@ const user = db.create('user')
 user.name = 'jack'
 user.age = 18
 user.hobbies = ['eating', 'sleaping', 'playing Peas']
-user.push('fish')
+user.hobbies.push('fish')
 user.gender = true
 user.address = {
     country: 'China',
