@@ -2,19 +2,21 @@ const PATH = require('path');
 const fs = require('fs');
 
 let defaultConfig = {
-    path: PATH.resolve('./', 'db')
+    path: PATH.resolve('./', 'db'), // 数据库json文件的路径
+    data: null // 初始数据
 }
 
 
 /**
- * 
+ * 创建或获取数据库实例对象
  * @param {String} dbName 文件名
- * @param {Object} obj 初始数据，若文件存在将会替换内容
- * @param {Object} config 配置文件
- * @returns {Proxy} 对象
+ * @param {object} config 配置文件
+ * @returns {Proxy} proxy代理对象
  */
-function create(dbName = Date.now() + '', obj, config) {
+function create(dbName = Date.now() + '', config) {
     config = { ...defaultConfig, ...config };
+    let obj = null;
+    if(config.data) { obj = {...config.data} };
 
     if (typeof dbName !== 'string') throw TypeError('dbName must be string');
     if (!PATH.isAbsolute(config.path)) throw TypeError('config.path must be a absulute path');
