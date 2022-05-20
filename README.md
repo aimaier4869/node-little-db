@@ -79,10 +79,10 @@ user.address.city // 'Shanghai'
 
 ### Methods 方法
 
-### `db.create([dbName, obj, options])`
+### `db.create([dbName, config])`
 * `dbName` {String} File name. If this parameter is not passed in, the current timestamp will be used as the file name. If the file does not exist, a new file will be created. If the file exists, the contents of the file will be read.  文件名，不传入该参数将把当前时间戳作为文件名。文件不存在则会创建一个新文件，若文件存在则读取该文件内容。
 
-* `options` {object} Configuration object. 配置对象。
+* `config` {object} Configuration object. 配置对象。
 
   * `path` {String} Database file storage path. 数据库文件存放路径。It should be an absolute path. 推荐传入一个绝对路径
     **Default:** `./db/`
