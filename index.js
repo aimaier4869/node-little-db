@@ -16,7 +16,7 @@ let defaultConfig = {
 function create(dbName = Date.now() + '', config) {
     config = { ...defaultConfig, ...config };
     let obj = null;
-    if(config.data) { obj = {...config.data} };
+    if (config.data) { obj = { ...config.data } };
 
     if (typeof dbName !== 'string') throw TypeError('dbName must be string');
     if (!PATH.isAbsolute(config.path)) throw TypeError('config.path must be a absulute path');
@@ -25,7 +25,7 @@ function create(dbName = Date.now() + '', config) {
 
     // 目录是否存在，不存在创建一个
     if (!fs.existsSync(config.path)) {
-        fs.mkdirSync(config.path);
+        fs.mkdirSync(config.path, { recursive: true });
     };
 
     // 文件是否存在，不存在创建一个
