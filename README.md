@@ -86,4 +86,4 @@ user.address.city // 'Shanghai'
 
   * `path` {String} Database file storage path. 数据库文件存放路径。It should be an absolute path. 推荐传入一个绝对路径
     **Default:** `./db/`
-  * `obj` {object} Initial data. If this parameter is passed in, the data will be written to the file. 初始数据，如果对该属性赋值会把数据写入到文件中（如果文件已存在会覆盖文件内容）。
+  * `data` {object} Initial data. If this parameter is passed in, the data will be written to the file. 初始数据，如果对该属性赋值会把数据写入到文件中（如果文件已存在会覆盖文件内容）。

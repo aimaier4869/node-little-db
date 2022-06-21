@@ -10,7 +10,7 @@ let defaultConfig = {
 /**
  * 创建或获取数据库实例对象
  * @param {String} dbName 文件名
- * @param {object} config 配置文件
+ * @param {object} config 配置文件{path: '数据库json文件的路径', data: '初始数据'}
  * @returns {Proxy} proxy代理对象
  */
 function create(dbName = Date.now() + '', config) {
