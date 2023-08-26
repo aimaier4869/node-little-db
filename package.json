@@ -1,8 +1,8 @@
 {
     "name": "node-little-db",
-    "version": "1.1.2",
+    "version": "1.1.4",
     "author": "aimaier4869",
-    "description": "Tiny local JSON database for Node and Electron.一个小型本地的JSON数据库",
+    "description": "将对象内容同步到文件中的一个Node.js库。",
     "main": "./dist/index.cjs",
     "exports": {
         ".": {
