@@ -6,7 +6,7 @@
 
 ## 文档
 
-[English]('./README.en.md')
+[English](./README.en.md)
 
 ## 安装
 
