@@ -6,8 +6,9 @@ export default [
         input: 'src/index.ts',
         output: [
             {
-                file: 'dist/index.js',
+                file: 'dist/index.mjs',
                 format: 'es',
+                compact: true,
             },
         ],
         plugins: [
@@ -19,13 +20,11 @@ export default [
         input: 'src/index.ts',
         output: [
             {
-                file: 'dist/index.cjs',
+                file: 'dist/index.js',
                 format: 'cjs',
+                compact: true,
             },
         ],
-        plugins: [
-            typescript({ declaration: false }),
-            clear({ targets: ['dist'] }),
-        ],
+        plugins: [typescript({ declaration: false })],
     },
 ]

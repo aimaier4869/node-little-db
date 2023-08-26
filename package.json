@@ -3,8 +3,20 @@
     "version": "1.1.2",
     "author": "aimaier4869",
     "description": "Tiny local JSON database for Node and Electron.一个小型本地的JSON数据库",
-    "main": "index.js",
+    "main": "./dist/index.cjs",
     "type": "module",
+    "exports": {
+        ".": {
+            "types": {
+                "require": "./dist/types/index.d.ts",
+                "default": "./dist/types/index.d.ts"
+            },
+            "default": {
+                "require": "./dist/index.js",
+                "default": "./dist/index.mjs"
+            }
+        }
+    },
     "scripts": {
         "start": "rollup -c -w",
         "build": "rollup -c"

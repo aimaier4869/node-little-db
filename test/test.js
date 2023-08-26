@@ -1,5 +1,5 @@
 // 引入little-db
-const db = require('../dist/index.cjs')
+const db = require('../dist/index.js')
 
 // 得到数据库对象
 const user = db.use('user')
