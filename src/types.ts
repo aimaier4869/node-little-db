@@ -4,12 +4,11 @@ export interface IOptions {
      */
     path?: string
     /**
-     * 初始数据
-     * @deprecated 请使用 `initialData` 代替
+     * 要替换的数据，每次运行都会覆盖原来的数据
      */
     data?: any
     /**
-     * 初始数据
+     * 初始数据，只有在文件不存在时才会生效
      */
     initialData?: any
     /**
@@ -18,4 +17,6 @@ export interface IOptions {
     encoding?: BufferEncoding
 }
 
-export interface IRealOptions extends Omit<Required<IOptions>, 'data'> {}
+export interface IRealOptions extends Omit<Required<IOptions>, 'data'> {
+    data?: IOptions['data']
+}

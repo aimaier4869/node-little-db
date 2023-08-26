@@ -12,18 +12,6 @@ const defaultOptions: IRealOptions = {
  * @param options
  */
 export function getOptions(options: IOptions = defaultOptions): IRealOptions {
-    // 判断是否同时传入了 `data` 和 `initialData`
-    if (options.initialData && options.data) {
-        console.warn('同时传入了 `data` 和 `initialData`，`data` 将会被忽略')
-        delete options.data
-    }
-
-    // 判断是否传入了 `data`
-    if (options.data) {
-        options.initialData = options.data
-        delete options.data
-    }
-
     // 判断path是否是绝对路径
     if (options.path && !path.isAbsolute(options.path)) {
         options.path = path.resolve(process.cwd(), options.path)

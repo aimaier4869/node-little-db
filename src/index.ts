@@ -6,8 +6,8 @@ import { getProxy } from './utils/getProxy'
 /**
  * @deprecated 下一个版本将会移除，请使用 `db.use` 代替
  */
-function create() {
-    console.log('create12')
+function create(filename?: string, options?: IOptions) {
+    return useFile(filename, options)
 }
 
 /**
