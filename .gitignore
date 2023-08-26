@@ -9,3 +9,4 @@ backup/
 .env
 dist/
 yarn.lock
+db/
