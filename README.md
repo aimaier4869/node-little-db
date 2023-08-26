@@ -1,60 +1,61 @@
-# little-db
+# node-little-db
 
-> Tiny local JSON database for Node and Electron
-> 小型项目的小型本地 JSON 数据库
+## 简介
 
-```js
-// require the little-db
-// 引入little-db
-const db = require('node-little-db')
+`node-little-db`是一个基于 Node.js 的第三方库，用于将对象内容同步到文件中。它的原理非常简单，当您更改对象的内容时，它会自动调用`fs.writeFileSync()`方法将对象内容写入文件。
 
-// get a database object
-// 得到数据库对象
-const user = db.create('user')
-```
+## 文档
 
-## Install 安装
+[English]('./README.en.md')
+
+## 安装
+
+通过以下命令安装`node-little-db`：
 
 ```sh
 npm i node-little-db
 ```
 
-## Usage 使用
+## 使用
+
+首先，引入`node-little-db`库：
 
 ```js
-// require the little-db
-// 引入little-db
 const db = require('node-little-db')
+```
 
-// get a database object
-// 得到数据库对象
-const user = db.create('user')
+然后，获取一个数据库对象：
 
-// Next, you just need to operate on the user object
-// 接下来你只需要对user对象进行操作即可
+```js
+const user = db.use('user')
+```
 
-// set a property
-// 设置属性
+现在，您可以对`user`对象进行操作了。
+
+#### 设置属性
+
+```js
 user.name = 'jack'
 user.age = 18
-user.hobbies = ['eating', 'sleaping', 'playing Peas']
+user.hobbies = ['eating', 'sleeping', 'playing Peas']
 user.hobbies.push('fish')
 user.gender = true
 user.address = {
     country: 'China',
-    city: 'Beijing'
+    city: 'Beijing',
 }
 user.address.city = 'Shanghai'
 ```
 
+运行后的文件内容示例
+
 ```js
-// user.json
 {
     "name": "jack",
     "age": 18,
     "hobbies": [
         "eating",
-        "sleaping",
+        "sleeping",
         "playing Peas",
         "fish"
     ],
@@ -66,24 +67,25 @@ user.address.city = 'Shanghai'
 }
 ```
 
+#### 读取属性
+
 ```js
-// get a property
-// 读取属性
 user.name // 'jack'
 user.age // 18
-user.hobbies // ['eating', 'sleaping', 'playing Peas']
+user.hobbies // ['eating', 'sleeping', 'playing Peas']
 user.gender // true
 user.address // {country: 'China', city: 'Beijing'}
 user.address.city // 'Shanghai'
 ```
 
-### Methods 方法
+## 方法
 
-### `db.create([dbName, config])`
-* `dbName` {String} File name. If this parameter is not passed in, the current timestamp will be used as the file name. If the file does not exist, a new file will be created. If the file exists, the contents of the file will be read.  文件名，不传入该参数将把当前时间戳作为文件名。文件不存在则会创建一个新文件，若文件存在则读取该文件内容。
+### db.use([filename, options])
 
-* `config` {object} Configuration object. 配置对象。
+使用指定的文件创建数据库对象，调用该方法后将返回一个代理对象，通过对这个对象进行操作，更改将被同步到文件中。
 
-  * `path` {String} Database file storage path. 数据库文件存放路径。It should be an absolute path. 推荐传入一个绝对路径
-    **Default:** `./db/`
-  * `data` {object} Initial data. If this parameter is passed in, the data will be written to the file. 初始数据，如果对该属性赋值会把数据写入到文件中（如果文件已存在会覆盖文件内容）。
+-   `filename`（可选）：文件名。如果未提供文件名，则会使用默认文件名 `db-${Date.now()}.json`。
+-   `options`（可选）：选项对象。
+    -   `options.path`：文件存放路径。
+    -   `options.initialData`：初始数据，在首次创建文件时使用。
+    -   `options.encoding`：文件编码，默认为 `utf-8`。

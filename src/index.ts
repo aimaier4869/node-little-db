@@ -16,6 +16,7 @@ function create(filename?: string, options?: IOptions) {
  * @param options 选项
  * @param options.path 文件的存放路径
  * @param options.initialData 初始数据，只有当初次创建文件时会使用这个数据
+ * @param options.encoding 文件编码，默认为`utf-8`
  */
 function useFile(filename?: string, options?: IOptions) {
     // 获取文件名
