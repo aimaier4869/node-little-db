@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        /* Visit https://aka.ms/tsconfig to read more about this file */
+        "target": "ES2016",
+        "module": "ESNext",
+        "outDir": "./dist",
+        "strict": true,
+        "skipLibCheck": true,
+        "declaration": true
+    },
+    "include": ["src/**/*"]
+}

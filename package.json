@@ -1,26 +1,39 @@
 {
-  "name": "node-little-db",
-  "version": "1.1.2",
-  "author": "aimaier4869",
-  "description": "Tiny local JSON database for Node and Electron.一个小型本地的JSON数据库",
-  "main": "index.js",
-  "repository": {
-		"type": "git",
-		"url": "https://gitee.com/aimaier4869/little-db.git"
-	},
-  "homepage": "https://gitee.com/aimaier4869/little-db",
-  "bugs": "https://gitee.com/aimaier4869/little-db/issues",
-  "keywords": [
-    "database",
-    "electron",
-    "JSON",
-    "local",
-    "lowdb",
-    "littledb",
-    "reactive",
-    "jsondb",
-    "localStorage"
-  ],
-  "license": "MIT",
-  "engines": {"node": ">=16.0.0"}
+    "name": "node-little-db",
+    "version": "1.1.2",
+    "author": "aimaier4869",
+    "description": "Tiny local JSON database for Node and Electron.一个小型本地的JSON数据库",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "rollup -c -w",
+        "build": "rollup -c"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://gitee.com/aimaier4869/little-db.git"
+    },
+    "homepage": "https://gitee.com/aimaier4869/little-db",
+    "bugs": "https://gitee.com/aimaier4869/little-db/issues",
+    "keywords": [
+        "database",
+        "electron",
+        "JSON",
+        "local",
+        "lowdb",
+        "littledb",
+        "reactive",
+        "jsondb",
+        "localStorage"
+    ],
+    "license": "MIT",
+    "engines": {
+        "node": ">=16.0.0"
+    },
+    "devDependencies": {
+        "@rollup/plugin-typescript": "^11.1.2",
+        "rollup": "^3.28.1",
+        "tslib": "^2.6.2",
+        "typescript": "^5.2.2"
+    }
 }

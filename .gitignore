@@ -1,0 +1,11 @@
+*.iml
+.idea
+.tscache
+.DS_Store
+node_modules/
+sauce_connect.log
+backup/
+.npmrc
+.env
+dist/
+yarn.lock
