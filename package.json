@@ -4,7 +4,6 @@
     "author": "aimaier4869",
     "description": "Tiny local JSON database for Node and Electron.一个小型本地的JSON数据库",
     "main": "./dist/index.cjs",
-    "type": "module",
     "exports": {
         ".": {
             "types": {
